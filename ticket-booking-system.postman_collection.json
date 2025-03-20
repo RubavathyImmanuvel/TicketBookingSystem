@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "f17a81b1-9b28-401f-bfff-440108af81ca",
+		"name": "ticket-booking-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42238191"
+	},
+	"item": [
+		{
+			"name": "Register-User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Jestin2\",\n    \"email\":\"abcde@gmail.com\",\n    \"password\":\"password777\",\n    \"role\":\"USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register-Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Alice\",\n    \"email\":\"admin@gmail.com\",\n    \"password\":\"password777\",\n    \"role\":\"ADMIN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login-User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/login?email=abcde@gmail.com&password=password777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "abcde@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "password777"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login-Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/login?email=admin@gmail.com&password=password777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "password777"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "event-create(admin)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDI0MDcwNTUsImV4cCI6MTc0MjQ5MzQ1NX0.ba0MmZbbphVsr4J-br__i5wdFpljZxNC7pQb5bBWHO8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"tvl bus\",\n    \"location\":\"tvl\",\n    \"seatsAvailable\":10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/event/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"event",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "event-viewall(admin) Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDI0MDcwNTUsImV4cCI6MTc0MjQ5MzQ1NX0.ba0MmZbbphVsr4J-br__i5wdFpljZxNC7pQb5bBWHO8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/admin/event/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"event",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNkZUBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc0MjQ4OTU4NCwiZXhwIjoxNzQyNTc1OTg0fQ.aHMMeUQ3AetICLjCkyoS0mBdp6j-lGgykCAh68xFTXw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/booking/create?eventId=2&seats=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"booking",
+						"create"
+					],
+					"query": [
+						{
+							"key": "eventId",
+							"value": "2"
+						},
+						{
+							"key": "seats",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
